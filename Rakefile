@@ -5,12 +5,14 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "metrixapp"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{MetrixApp Ruby API}
+    gem.description = %Q{MetrixApp Ruby API: send data to MetrixApp}
     gem.email = "keith@dancingtext.com"
     gem.homepage = "http://github.com/kmcd/metrixapp"
     gem.authors = ["Keith McDonnell"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.add_dependency "net-http-persistent"
+    gem.add_dependency "json"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

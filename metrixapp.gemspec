@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{metrixapp}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Keith McDonnell"]
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/metrixapp.rb",
+     "metrixapp.gemspec",
      "test/helper.rb",
      "test/test_metrixapp.rb"
   ]

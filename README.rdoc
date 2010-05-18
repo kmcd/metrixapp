@@ -1,6 +1,28 @@
-= metrixapp
+= MetrixApp gem
 
-Description goes here.
+A gem to send your data to MetrixApp.
+
+You'll need to a signup for an account before you send your data.
+
+== Installation
+
+sudo gem install metrixapp
+
+== Usage
+
+Firstly, you'll need your account code. You can get this from your MetrixApp 
+account by logging in and clicking the "Send your data" link.
+
+m = MetrixApp.new 'abc123'
+
+That's it - you're good to go! Just send your data using the log method, e.g.
+
+m.log 'Signup'
+
+You can also store any ruby data which can be convered to json.
+
+m.log 'Login', :user => 'foo@example.org'
+
 
 == Note on Patches/Pull Requests
  

@@ -28,10 +28,11 @@ class MetrixApp
   #  m = MetrixApp.new 'abc123'
   #  m.log 'Singup'
   #  m.log 'Login', :user => 'foo@example.org'
-  #  m.log 'Upgrae', ['foo@example.org', 'Premium']
+  #  m.log 'Upgrade', ['foo@example.org', 'Premium']
   #
   def log(event_name, data={})
     raise ArgumentError.new 'You MUST give your event a name' unless event_name.match /.+/
+    
     @http.request URI.parse("http://www.metrixapp.com/log?name=#{CGI::escape(event_name)}&data=#{CGI::escape(data.to_json)}&account_code=#{@account_code}")
   end
 end

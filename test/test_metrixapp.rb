@@ -23,6 +23,10 @@ class TestMetrixapp < Test::Unit::TestCase
     MetrixApp.new(account_code).log 'foo', 'foo'
   end
   
+  test "should accept symbol as event name" do
+    assert_nothing_raised { MetrixApp.new(account_code).log :foo}
+  end
+  
   def mock_log_request(name, data)
     event_name = CGI::escape name
     event_data = CGI::escape data.to_json

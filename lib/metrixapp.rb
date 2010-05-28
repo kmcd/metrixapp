@@ -31,6 +31,7 @@ class MetrixApp
   #  m.log 'Upgrade', ['foo@example.org', 'Premium']
   #
   def log(event_name, data={})
+    event_name = event_name.to_s
     raise ArgumentError.new 'You MUST give your event a name' unless event_name.match /.+/
     
     @http.request URI.parse("http://www.metrixapp.com/log?name=#{CGI::escape(event_name)}&data=#{CGI::escape(data.to_json)}&account_code=#{@account_code}")

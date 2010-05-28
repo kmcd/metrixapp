@@ -28,10 +28,9 @@ class TestMetrixapp < Test::Unit::TestCase
     event_data = CGI::escape data.to_json
     
     uri = URI.expects(:parse).
-      with("http://www.metrixapp.com/log?name=#{event_name}&data=#{event_data}&account_code=#{account_code}").
-      returns URI.parse 'http://example.org'
+      with("http://www.metrixapp.com/log?name=#{event_name}&data=#{event_data}&account_code=#{account_code}")
       
-    Net::HTTP::Persistent.any_instance.expects(:request).with uri
+    Net::HTTP::Persistent.any_instance.expects(:request)
   end
   
   def account_code
